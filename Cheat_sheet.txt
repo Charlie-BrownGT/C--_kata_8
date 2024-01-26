@@ -1,0 +1,109 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+// Function declaration
+int add(int a, int b);
+
+int main() {
+    // Output
+    cout << "Hello, World!" << endl;
+
+    // Variables and Data Types
+    int number = 10;
+    float pi = 3.14;
+    char grade = 'A';
+
+    // Input
+    cin >> number;
+
+    // Control Flow
+    if (number > 0) {
+        cout << "Number is positive." << endl;
+    } else {
+        cout << "Number is non-positive." << endl;
+    }
+
+    // Switch Statement
+    switch (number) {
+        case 1:
+            cout << "One" << endl;
+            break;
+        case 2:
+            cout << "Two" << endl;
+            break;
+        default:
+            cout << "Other" << endl;
+    }
+
+    // Loops
+    for (int i = 0; i < 5; ++i) {
+        cout << i << " ";
+    }
+    cout << endl;
+
+    int whileCounter = 0;
+    while (whileCounter < 5) {
+        cout << whileCounter << " ";
+        whileCounter++;
+    }
+    cout << endl;
+
+    int doWhileCounter = 0;
+    do {
+        cout << doWhileCounter << " ";
+        doWhileCounter++;
+    } while (doWhileCounter < 5);
+    cout << endl;
+
+    // Functions
+    int sum = add(3, 4);
+    cout << "Sum: " << sum << endl;
+
+    // Arrays and Strings
+    int myArray[5] = {1, 2, 3, 4, 5};
+    string myString = "Hello, C++!";
+
+    // Classes and Objects
+    class MyClass {
+    public:
+        int myMemberVariable;
+        void myMemberFunction() {
+            myMemberVariable = 10;
+        }
+    };
+
+    MyClass obj;
+    obj.myMemberVariable = 42;
+    obj.myMemberFunction();
+
+    // Pointers
+    int* myPointer;
+    myPointer = new int[5];
+    delete[] myPointer;
+
+    int arr[5] = {1, 2, 3, 4, 5};
+    int* ptr = arr;
+    cout << *ptr << " "; // Accessing value at the address pointed by ptr
+    ptr++;               // Move to the next element
+    cout << *ptr << endl;
+
+    // File I/O
+    ofstream outFile("output.txt");
+    outFile << "Hello, File!";
+    outFile.close();
+
+    ifstream inFile("output.txt");
+    string fileContent;
+    inFile >> fileContent;
+    cout << "File Content: " << fileContent << endl;
+
+    return 0;
+}
+
+// Function definition
+int add(int a, int b) {
+    return a + b;
+}
